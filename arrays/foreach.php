@@ -1,5 +1,15 @@
 <?php
 
-$color = array('blanco', 'verde', 'rojo');
+$colores = array('blanco', 'verde', 'rojo');
+$html = "<ul>" ;
+
+foreach($colores as $color ){
+    $html .= "<li> $color </li>";
+}
+
+$html .= "</ul>" ;
+
+echo $html;
+
 
 ?>

@@ -1,14 +1,20 @@
 <?php
 
 $data =["Marcos" => "Futbolista", "Sara" => "Periodista deportivo", "Jan" => "Desarrollador web", "Alejandro" => "Jugador de futbol sala"];
+//print_r(($data));
+//strlen("Cadena");
 
-strlen("Cadena");
+function cmp($a, $b){
 
-function compare($a, $b){
-    // variable acumulativa del valor más largo ??
-    // 0 iguales, 1 a > b, -1 a<b
-    // return valor
+    if (strlen($a) == strlen($b)){
+        return 0;
+    }
+    return (strlen($a) > strlen($b)) ? 1 : -1;
+
 
 };
+
+uasort($data, "cmp");
+print_r($data);
 
 ?>

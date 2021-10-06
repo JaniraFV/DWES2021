@@ -26,13 +26,11 @@ $contactos = array(
     
 //http://localhost/DWES2021/arrays/filter.php?filter=@gmail
 
+$filter = strtolower($_GET["filter"] ?? "");    
 
-    $filtered =[];
-    $filter = strtolower($_GET["filter"] ?? "");
-    foreach ($contactos as $contacto){
-        if (strpos(strtolower($contacto["email"]), $filter) !== FALSE){
-            $filtered[] = $contacto;
-        }
-    }
+    $filtered = array_filter($contactos, function ($contacto) use ($filter){
+        return strpos (strtolower($contacto["email"]),$filter) !== FALSE;
+    });
+    
 print_r($filtered);
 ?>

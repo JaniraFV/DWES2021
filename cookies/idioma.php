@@ -1,26 +1,29 @@
 <?php
    
     $language = $_COOKIE['LanguageCookie'] ?? "" ;
+    $getSetLanguage = $_GET['setLanguage'] ?? 'es';
 
-    
-    if ($language == ""){
 
-        $language = "$_GET('setLanguage')";
-        
+
+    if($getSetLanguage == 'es'){
+
+        $language = 'es';
+
         $content = "Esta página está en Castellano (Idioma por defecto)";
         
         $title = "Cambiar el idioma de la página";
-        
-        
-    }else if(($_GET('setLanguage')) == 'en'){
 
-        $language = 'en';
-        
-        $content = "This page is in English";
+    }else if( $getSetLanguage == 'en'){
 
-        $title = "Change the language of the page";
-        
-    }
+            $language = 'en';
+            
+            $content = "This page is in English";
+    
+            $title = "Change the language of the page";
+            
+        }
+
+
     
     setcookie("LanguageCookie", $language);
     

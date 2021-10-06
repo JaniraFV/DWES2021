@@ -15,11 +15,11 @@
 
     }else if( $getSetLanguage == 'en'){
 
-            $language = 'en';
-            
-            $content = "This page is in English";
-    
-            $title = "Change the language of the page";
+        $language = 'en';
+        
+        $content = "This page is in English";
+
+        $title = "Change the language of the page";
             
         }
 
